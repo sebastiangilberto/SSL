@@ -29,12 +29,12 @@ Las asignaturas del area de sistemas de información son:
 - Análisis de requisitos
 - Análisis de sistemas
 - Diseño de sistemas
-- Ingeniería de Software
+- Proyecto final
 - Sistemas y organizaciones
 
 5. Indique el paradigma de programación aplicado en primer año de la carrera.
 
-El paradigma de programación aplicado en primer año de la carrera, fue el estructurado.
+El paradigma de programación aplicado en primer año de la carrera, fue el procedural.
 
 6. Defina abstracción.
 
@@ -65,7 +65,12 @@ Una partición de un conjunto es una división del mismo, en subconjuntos que no
 
 6. Sea X={a,b} indique P(X).
 
-P(X) es la función partición del conjunto X.
+P(X) es el conjunto de partes, que está formado por todos los conjuntos que se pueden formar por el argumento X:
+
+- conjunto vacío
+- conjunto {a}
+- conjunto {b}
+- conjunto {a,b}
 
 7. Defina Lenguaje Formal.
 
@@ -73,7 +78,7 @@ Un lenguaje formal es un conjunto de palabras y métodos para combinar palabras,
 
 8. Defina autómata finito.
 
-Un autómata finito es una herramienta abstracta que se utiliza para reconocer un determinado Lenguaje
+Un autómata finito se define como una 5-upla, que se utiliza para reconocer un determinado Lenguaje
 Regular.
 Es un modelo matemático de un sistema, que recibe una cadena formada por caracteres de un
 determinado alfabeto y determina si esa cadena pertenece o no al lenguaje que reconoce.
@@ -95,8 +100,8 @@ También facilita la creación de componentes re-utilizables, dividiendo el prog
 Las tres estructuras de control de flujo de ejecución de la programación estructurada son:
 
 - secuencia
-- iterativa
-- de control avanzada.
+- selección
+- iteración
 
 4. Indique las diferencias entre parámetro y argumento.
 
@@ -110,13 +115,13 @@ Las tres estructuras de control de flujo de ejecución de la programación estru
 
 6. Explique las diferencias entre parámetros de entrada, de salida y de entrada/salida.
 
-- De entrada (dato): si el resultado del sub-programa depende de su valor.
-- De salida (resultado): si se devuelve un resultado asignándoles un valor.
+- De entrada (dato): se utiliza el dato para realizar el procedimiento del sub-programa.
+- De salida (resultado): se devuelve un resultado asignándole un valor al dato.
 - De entrada/salida (dato-resultado): ambas cosas.
 
 7. Defina tipo de dato abstracto.
 
-Un tipo de dato abstracto está definido por un conjunto de operaciones que representan el comportamiento, sin mencionar cómo van a ser implementadas.
+Un tipo de dato abstracto está definido por un conjunto de datos, y de operaciones que representan el comportamiento, sin mencionar cómo van a ser implementadas, ni el tipo específico de los datos.
 
 8. Indique las diferencias entre una pila y una cola.
 
@@ -132,7 +137,7 @@ Estructura de datos con almacenamiento físico en memoria secundaria o disco.
 La solución está hecha en el lenguaje de programación C++.
 
 ```c++
-float promedio(int a[], int n) {  
+float promedio(int a[], int n) { 
     int sum = 0;  
  for (int i = 0; i < n; i++) {  
         sum += a[i];  
