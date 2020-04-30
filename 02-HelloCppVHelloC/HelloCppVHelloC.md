@@ -25,24 +25,21 @@ int main() {
 }
 ```
 
-### Java
-
-```java
-public class HelloWorld {
-    
-    public static void main(String[] args) {
-        System.out.printn("Hello, World!\n");
-    }
-
-}
-
-```
-
 ### Similitudes y diferencias
 
+##
+|**Diferencias**|C|C++|Categoría|
+|--|--|--|--|
+|**Notación**| Expresion sufijo | Expresión infijo| Sintáxis |
+|**Expresión**| Invocar una función de la biblioteca stdio, con argumento hello world| Realizar operacion para insertar hello world en cout| Semántica|
 
-|           | Similitudes                                                                                                                                                                  | Diferencias                                                                                                                                     |
-|-----------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------|
-| Léxico    | Caracteres especiales como ";", "{}", "()"                                                                                                                                   | Palabras reservadas de cada lenguaje: Ej: Java (public) Bibliotecas particulares de cada lenguaje: C++ (iostream) C (stdio.h)                   |
-| Sintaxis  | Entre C y C++, la función tiene una estructura similar: tipo de retorno + identificador de la función Se utiliza el standard output como salida para la cadena de caracteres | En Java se utiliza otra estructura semántica: nivel de acceso + palabra reservada + tipo de retorno + identificador de la función + argumentos |
-| Semántica | Son iguales ya que todos tienen el mismo significado                                                                                                                         |                                                                                                                                                 |
+##
+|**Similitudes**|Descripción|Categoría|
+|--|--|--|
+|**Enteros**|Int significa "entero"|Sintaxis|
+|**Enteros**|Ambos lenguajes trabajan de la misma forma con enteros, los representan con el tipo de dato Int|Semántica|
+|**Funciones**|Las funciones se escriben igual, aclarando el tipo de dato de salida, nombrando la función, aclarando los parámetros entre paréntesis y el desarrollo entre llaves.|Sintaxis|
+|**Simbología utilizada**|Todos los símbolos utilizados en estos ejemplos son comunes a los diccionarios de cada lenguaje.|Léxico|
+|**Objetivo**| Analizar similitudes y diferencias en diferentes niveles del lenguaje| Pragmática|
+
+
