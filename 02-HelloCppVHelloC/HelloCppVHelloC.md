@@ -2,7 +2,6 @@
 
 ## UTN FRBA – SSL – K2051 – Trabajo #02
 
-
 ### C
 
 ```c
