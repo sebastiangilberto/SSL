@@ -9,7 +9,7 @@
 | Preprocesamiento | `-E` | El resultado se envía por defecto al standard output, pudiendo redireccionarlo a un archivo con nombre a elección | gcc -E hello.c > hello.i |
 | Compilación| `-S` | El resultado por defecto, es un archivo con el mismo nombre que el utilizado como fuente, con extensión `.s` | gcc -S hello.c |
 | Ensamblado| `-c` | El resultado por defecto, es un archivo con el mismo nombre que el utilizado como fuente, con extensión `.o` | gcc -c hello.c |
-| Vinculación| `-o output_filename` `-llibname` | El resultado por defecto, es un archivo `a.out`. Opcionalmente puede especificarse el nombre del archivo de salida, con el primer flag mencionado. También es posible vincular bibliotecas, utilizando el segundo flag, concatenado al nombre de la biblioteca | gcc hello.c -lstdio -o hello |
+| Vinculación| `-o output_filename` `-llibname` | El resultado por defecto, es un archivo `a.out`. Opcionalmente puede especificarse el nombre del archivo de salida, con el primer flag mencionado. También es posible vincular bibliotecas, utilizando el segundo flag, concatenado al nombre de la biblioteca | gcc hello.c -lmylib -o hello |
 
 > [GCC Options Controlling the Kind of Output](https://gcc.gnu.org/onlinedocs/gcc/Overall-Options.html)
 
