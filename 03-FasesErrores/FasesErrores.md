@@ -75,7 +75,7 @@ int printf(const char *s, ...);
 
 ##### Errores:
 
-```
+```cmd
 hello3.c:4:5: warning: implicit declaration of function 'prontf' is invalid in C99 [-Wimplicit-function-declaration]
 prontf("La respuesta es %d\n");
     ^
@@ -105,7 +105,7 @@ asd
 
 ##### Errores:
 
-```
+```cmd
 hello4.c:4:5: warning: implicit declaration of function 'prontf' is invalid in C99 [-Wimplicit-function-declaration]
     prontf("La respuesta es %d\n");
 ```
@@ -127,7 +127,7 @@ hello4.c:4:5: warning: implicit declaration of function 'prontf' is invalid in C
 
 ##### Errores:
 
-```
+```cmd
 hello4.c:4:5: warning: implicit declaration of function 'prontf' is invalid in C99 [-Wimplicit-function-declaration]
     prontf("La respuesta es %d\n");
 ```
@@ -148,7 +148,7 @@ hello4.c:4:5: warning: implicit declaration of function 'prontf' is invalid in C
 
 ##### Errores:
 
-```
+```cmd
 Undefined symbols for architecture x86_64:
   "_prontf", referenced from:
       _main in hello4.o
@@ -173,7 +173,7 @@ clang: error: linker command failed with exit code 1 (use -v to see invocation)
 
 ##### Errores:
 
-```
+```cmd
 hello5.c:4:30: warning: more '%' conversions than data arguments [-Wformat]
     printf("La respuesta es %d\n");
 ```
@@ -235,7 +235,7 @@ hello5.c:4:30: warning: more '%' conversions than data arguments [-Wformat]
 
 ##### Errores:
 
-```
+```cmd
 hello7.c:3:5: warning: implicitly declaring library function 'printf' with type 'int (const char *, ...)' [-Wimplicit-function-declaration]
     printf("La respuesta es %d\n", i);
     ^
