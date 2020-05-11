@@ -229,7 +229,9 @@ hello5.c:4:30: warning: more '%' conversions than data arguments [-Wformat]
 - Archivo `hello7.out`
 - Se genera el archivo ejecutable, equivalente al código del archivo fuente
 - Al ejecutar el archivo resultante, se visualiza por consola `La respuesta es 42`
-- El código funciona debido a que GCC por defecto incluye la biblioteca estándard [GCC Link Options](https://gcc.gnu.org/onlinedocs/gcc/Link-Options.html)
+- El código funciona debido a que la firma de la función printf declarada, coincide con la de la biblioteca estándar, la cual es incluída por defecto por GCC durante la fase de vinculación. 
+
+> [GCC Link Options](https://gcc.gnu.org/onlinedocs/gcc/Link-Options.html)
 
 ##### Errores:
 
