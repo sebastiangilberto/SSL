@@ -28,6 +28,7 @@
 - Archivo **hello2.i**
 - Se eliminó el comentario en el código
 - Se reemplazó la inclusión del header de la biblioteca, por la ruta donde se encuentra dicho archivo
+- Se agregaron las declaraciones de las funciones, incluidas en la biblioteca estándar
 - Se agregó una definición del archivo con la forma: `# hello2.c`
 
 ##### Errores:
@@ -44,8 +45,8 @@
 int printf(const char *s, ...);
 ```
 
-- Se está declarando la función printf
-- Recibe como parámetro una cadena de caracteres, y opcionalmente un número arbitrario de parámetros "`...`"
+- Se está declarando la firma de la función printf
+- Recibe como parámetro un puntero a un char constante, y opcionalmente un número arbitrario de parámetros "`...`"
 - Devuelve un valor de tipo entero
 
 ##### Comando ejecutado:
@@ -156,7 +157,7 @@ ld: symbol(s) not found for architecture x86_64
 clang: error: linker command failed with exit code 1 (use -v to see invocation)
 ```
 
-- No se reconoce la función prontf como válida, generando un error en el linker **(error)**
+- El linker no encuentra la función prontf **(error)**
 
 ---
 
@@ -229,7 +230,7 @@ hello5.c:4:30: warning: more '%' conversions than data arguments [-Wformat]
 - Archivo `hello7.out`
 - Se genera el archivo ejecutable, equivalente al código del archivo fuente
 - Al ejecutar el archivo resultante, se visualiza por consola `La respuesta es 42`
-- El código funciona debido a que la firma de la función printf declarada, coincide con la de la biblioteca estándar, la cual es utilizada por defecto por GCC durante la fase de vinculación. 
+- El código funciona debido a que la función printf utilizada, se busca en la biblioteca estándard, la cual se linkea por defecto por GCC durante la fase de vinculación. 
 
 > [GCC Link Options](https://gcc.gnu.org/onlinedocs/gcc/Link-Options.html)
 
