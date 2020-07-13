@@ -1,0 +1,25 @@
+digraph expression_tree {
+    graph [ordering="out"];
+    
+    Or [ label = "||" ]
+    
+    Eq1 [ label = "==" ]
+    Eq2 [ label = "==" ]
+    Eq3 [ label = "==" ]
+    
+    cVar1 [ label = "c" ]
+    cVar2 [ label = "c" ]
+    cVar3 [ label = "c" ]
+
+    Or -> Eq1
+    Eq1 -> cVar1
+    Eq1 -> "'  '"
+    
+    Or -> Eq2
+    Eq2 -> cVar2
+    Eq2 -> "'\\n'"
+
+    Or -> Eq3
+    Eq3 -> cVar3
+    Eq3 -> "'\\t'"
+}
