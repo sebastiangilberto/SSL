@@ -4,14 +4,10 @@ static void Programa(void);
 static void Expresion(void);
 static void Operador(void);
 static void Primaria(void);
-//static void Match(Token esperado);
-//static void ErrorSintactico(Token t);
 static void ErrorSintactico(Token esperado, Token alternativa);
 
 void Objetivo(void) {
-     /* <objetivo> -> <programa> FDT */
     Programa();
-    //Match(FDT);
     printf("[Parser] Expresión Válida\n");
 }
 
@@ -20,7 +16,6 @@ static void Programa(void) {
 }
 
 static void Expresion(void) {
-    /* <expresion> -> <primaria> {<operador> <primaria>} */
     Primaria();
     
     while(1) {
@@ -42,7 +37,6 @@ static void Expresion(void) {
 }
 
 static void Operador(void) {
-    /* <operador> -> uno de ADICION MULTIPLICACION */
     Token t = GetNextToken();
     if (t == ADICION || t == MULTIPLICACION)
         return;
@@ -51,34 +45,12 @@ static void Operador(void) {
 }
 
 static void Primaria(void) {
-    /* <primaria> -> <identificador> | <constante> | ( <expresión> ) */
     Token t = GetNextToken();
     if (t == IDENTIFICADOR || t == CONSTANTE)
         return;
     else
         ErrorSintactico(IDENTIFICADOR, CONSTANTE);
-    //else
-        //Expresion();
 }
-
-/**
-static void Match(Token esperado) {
-    Token t = GetNextToken();
-	if(esperado == t)
-		tokenActual = t;
-	else
-        ErrorSintactico(esperado);
-}
-**/
-
-/**
-static void ErrorSintactico(Token esperado) {
-    printf("[Parser] Error Sintáctico\n");
-    printf("[Parser] Token esperado: %s\n", TokenString(esperado));
-    printf("[Parser] Token actual: %s\n", TokenString(tokenActual));
-    exit(EXIT_SUCCESS);
-}
-**/
 
 static void ErrorSintactico(Token esperado, Token alternativa) {
     printf("[Parser] Error Sintáctico\n");

@@ -11,10 +11,6 @@ static bool Letra(int c);
 static bool Espacio(int c);
 static void ErrorLexico(int c);
 
-//Token GetNextToken() {
-//    return tokenList[lastToken++];
-//}
-
 Token GetNextToken() {
     Token token = INICIAL;
     int c;
@@ -110,7 +106,6 @@ char* TokenString(Token t) {
 }
 
 static void DevolverCaracter(char c) {
-    // printf("[Scanner] Carácter devuelto: %c\n", c);
     ungetc(c, stdin);
 }
 
