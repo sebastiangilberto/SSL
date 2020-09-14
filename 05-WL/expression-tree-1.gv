@@ -1,15 +1,19 @@
 digraph expression_tree_1 {
     graph [ordering="out"];
 
-    eq [ label = "=" ]
+    Eq1 [ label = "=" ]
+    Eq2 [ label = "=" ]
+    Eq3 [ label = "=" ]
     
     n1 [ label = "n1" ]
     nw [ label = "nw" ]
     nc [ label = "nc" ]
     zero [label = "0" ]
 
-    eq -> n1
-    eq -> nw
-    eq -> nc
-    eq -> zero
+    Eq1 -> n1
+    Eq1 -> Eq2
+    Eq2 -> nw
+    Eq2 -> Eq3
+    Eq3 -> nc
+    Eq3 -> zero
 }

@@ -8,30 +8,21 @@
 int main(void) {
     int c;
 
-    Read:
-        if ((c = getchar()) != EOF) {            
-            switch(c) {
-                case ' ':
-                case '\t':
-                case '\n':
-                case '.':
-                case ',':
-                case ';':
-                    goto Out;
-                    break;
-                default:
-                    goto In;
-                    break;
-            }
+    Out:           
+        switch(c = getchar()) {
+            case ' ':
+            case '\t':
+            case '\n':
+            case '.':
+            case ',':
+            case ';':
+                putchar('\n');
+                goto Out;
+            case EOF: return;
+            default:
+                putchar(c);
+                goto Out;
         }
-        
-        return 0;
 
-    In:
-        putchar(c);
-        goto Read;
-
-    Out:
-        putchar('\n');
-        goto Read;
+    return 0;
 }
