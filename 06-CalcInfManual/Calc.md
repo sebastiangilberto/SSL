@@ -2,7 +2,7 @@
 
 ## Diagrama de transiciones
 
-![Diagrama](diagrama.png)
+![Diagrama](diagram.png)
 
 ## Gramática Léxica
 
