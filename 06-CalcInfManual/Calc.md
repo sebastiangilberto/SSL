@@ -1,6 +1,6 @@
 # Calculadora Infija Manual
 
-## Diagrama de transiciones
+## Máquina de estado
 
 ![Diagrama](diagram.png)
 
@@ -8,7 +8,6 @@
 
 ```xml
 <token> -> uno de <identificador> <constante> <adición> <multiplicación>
-<identificador o constante> -> uno de <identificador> <constante>
 <identificador> -> <letra> {<letra>}
 <constante> -> <dígito> {<dígito>}
 <operador> -> uno de <adición> <multiplicación>
