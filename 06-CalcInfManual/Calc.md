@@ -1,3 +1,9 @@
+# Calculadora Infija Manual
+
+## Diagrama de transiciones
+
+![Diagrama](diagrama.png)
+
 ## Gramática Léxica
 
 ```xml
