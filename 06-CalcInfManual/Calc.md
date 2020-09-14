@@ -32,7 +32,7 @@
 
 | Programa Fuente   | Token          | Función          |
 |-------------------|----------------|------------------|
-| Estado inicial    | INIIAL         | N/A              |
+| Estado inicial    | INICIAL         | N/A              |
 | +                 | ADICION        | Adición()        |
 | *                 | MULTIPLICACION | Multiplicación() |
 | [A-Za-z]*         | IDENTIFICADOR  | Identificador()  |
