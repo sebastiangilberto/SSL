@@ -32,11 +32,11 @@
 
 | Programa Fuente   | Token          | Función          |
 |-------------------|----------------|------------------|
-| Estado inicial    | INICIAL         | N/A              |
+| Estado inicial    | INICIAL        | N/A              |
 | +                 | ADICION        | Adición()        |
 | *                 | MULTIPLICACION | Multiplicación() |
-| [A-Za-z]*         | IDENTIFICADOR  | Identificador()  |
-| [0-9]*            | CONSTANTE      | Constante()      |
+| [A-Za-z]+         | IDENTIFICADOR  | Identificador()  |
+| [0-9]+            | CONSTANTE      | Constante()      |
 | EOF               | FDT            | FinDeTexto()     |
 | Carácter inválido | UNDEFINED      | N/A              |
 
