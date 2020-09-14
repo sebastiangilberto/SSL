@@ -11,6 +11,10 @@ static bool Letra(int c);
 static bool Espacio(int c);
 static void ErrorLexico(int c);
 
+//Token GetNextToken() {
+//    return tokenList[lastToken++];
+//}
+
 Token GetNextToken() {
     Token token = INICIAL;
     int c;
