@@ -1,7 +1,7 @@
 digraph expression_tree {
     graph [ordering="out"];
     
-    Carácter [label="+"];
+    Carácter [label="-"];
     Letra [ label = "+" ];
     Dígito [ label = "+" ];
     Adición [ label = "+" ];
