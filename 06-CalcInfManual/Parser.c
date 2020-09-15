@@ -2,7 +2,6 @@
 
 static void Programa(void);
 static void Expresion(void);
-static void Operador(void);
 static void Primaria(void);
 static void ErrorSintactico(Token esperado, Token alternativa);
 
@@ -24,24 +23,12 @@ static void Expresion(void) {
             case MULTIPLICACION:
                 Primaria();
                 break;
-            case IDENTIFICADOR:
-            case CONSTANTE:
-                Operador();
-                break;
             case FDT:
                 return;
             default:
                 break;
         }
     }
-}
-
-static void Operador(void) {
-    Token t = GetNextToken();
-    if (t == ADICION || t == MULTIPLICACION)
-        return;
-    else
-        ErrorSintactico(ADICION, MULTIPLICACION);
 }
 
 static void Primaria(void) {

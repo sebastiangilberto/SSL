@@ -43,44 +43,6 @@ Token GetNextToken() {
     return token;
 }
 
-void LeerCaracteres() {
-    lastToken = 0;
-    int index = 0;
-    int c;
-
-    while (tokenActual != FDT) {
-        c = getchar();
-
-        while(Espacio(c)) c = getchar();
-
-        if (FinDeTexto(c)) {
-            tokenActual = FDT;
-        } else if (Digito(c)) {
-            Constante();
-            tokenActual = CONSTANTE;
-        } else if (Letra(c)) {
-            Identificador();
-            tokenActual =  IDENTIFICADOR;
-        } else if (Adicion(c)) {
-            tokenActual =  ADICION;
-        } else if (Multiplicacion(c)) {
-            tokenActual =  MULTIPLICACION;
-        } else {
-            tokenActual =  UNDEFINED;
-            ErrorLexico(c);
-        }
-
-        printf("[Scanner] Token identificado: %s\n", TokenString(tokenActual));
-        tokenList[index++] = tokenActual;
-    }
-}
-
-void MostrarTokens() {
-    for(int index = 0; index < lastToken; index++) {
-        printf("[Scanner] tokenList[%d]: %s\n", index, TokenString(tokenList[index]));
-    }
-}
-
 char* TokenString(Token t) {
     switch (t)
     {
@@ -160,9 +122,3 @@ static void ErrorLexico(int c) {
     printf("[Scanner] Carácter inválido: %c\n", c);
     exit(EXIT_SUCCESS);
 }
-
-//static void AgregarCaracter(int);
-
-//static void LimpiarBuffer(void);
-
-//static void RepararErrorSintactico(void);

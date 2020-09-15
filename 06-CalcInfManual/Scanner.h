@@ -10,9 +10,8 @@ typedef enum {
     INICIAL, ADICION, MULTIPLICACION, IDENTIFICADOR, CONSTANTE, FDT, UNDEFINED
 } Token;
 
+// extern
 Token tokenActual;
-Token tokenList[100];
-unsigned lastToken;
 
 Token GetNextToken();
 char* TokenString(Token token);
