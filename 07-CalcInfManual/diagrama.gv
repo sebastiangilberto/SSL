@@ -1,0 +1,16 @@
+digraph expression_tree {
+    graph [ordering="out"];
+    
+    Carácter [label="-"];
+    Letra [ label = "+" ];
+    Dígito [ label = "+" ];
+    Adición [ label = "+" ];
+    Multiplicación [label = "+" ];
+
+    Carácter -> Letra [label="L"];
+    Carácter -> Dígito [label="D"];
+    Carácter -> Adición [label="+"];
+    Carácter -> Multiplicación [label="*"];
+    Letra -> Letra [label="L"];
+    Dígito -> Dígito [label="D"];
+}
