@@ -25,7 +25,6 @@
 <expresión> -> <primaria> {<operador> <primaria>}
 <primaria> -> <identificador> |
               <constante> |
-              <expresión>
               ( <expresión> )
 ```
 
