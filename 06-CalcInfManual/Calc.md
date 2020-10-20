@@ -24,8 +24,7 @@
 <programa> -> <expresion>
 <expresión> -> <primaria> {<operador> <primaria>}
 <primaria> -> <identificador> |
-              <constante> |
-              <expresión>
+              <constante>
 ```
 
 ## Tabla de Tokens
