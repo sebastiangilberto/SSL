@@ -17,19 +17,15 @@ void Objetivo(void)
 {
   Programa();
   Match(FDT);
-  Terminar();
 }
 
 /* FUNCIONES PRIVADAS */
 
-static void Terminar(void)
-{
-  printf("[Parser] Sentencias Válidas\n");
-}
-
 static void Programa(void)
 {
+  Match(INICIO);
   ListaSentencias();
+  Match(FIN);
 }
 
 static void ListaSentencias(void)

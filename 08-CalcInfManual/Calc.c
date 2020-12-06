@@ -22,13 +22,25 @@ int main()
 
 static void Ejemplos(void)
 {
-    printf("[Calc] Ejemplos de asignación:\n");
+    printf("[Calc] El formato válido es el siguiente:\n");
+    printf("Token Inicio '{'\n"
+           "\tLista de sentencias [asignación|evaluación]\n"
+           "Token Fin '}'\n");
+
+    printf("\n[Calc] Ejemplo de programa:\n");
+    printf("{\n"
+           "\tA=24;\n"
+           "\tB=(3+2)*4;\n"
+           "\t$A+B;\n"
+           "}\n");
+
+    printf("\n[Calc] Ejemplos de asignación:\n");
     printf("\tA=24;\n"
            "\tA=2+7;\n"
            "\tB=(3+2)*4;\n"
            "\tA=B;\n");
 
-    printf("[Calc] Ejemplos de Evaluación:\n");
+    printf("\n[Calc] Ejemplos de Evaluación:\n");
     printf("\t$A;\n"
            "\t$2+2;\n"
            "\t$A+2;\n"

@@ -17,6 +17,16 @@ int FLAG_TOKEN = 0;
           strcpy(LEXEMA,yytext);
           return (CONSTANTE);
           }
+\{ {
+
+          strcpy(LEXEMA,yytext);
+          return INICIO;
+          }
+\} {
+
+          strcpy(LEXEMA,yytext);
+          return FIN;
+          }
 \( {
 
           strcpy(LEXEMA,yytext);
