@@ -29,8 +29,8 @@ static void Ejemplos(void)
            "\tA=B;\n");
 
     printf("[Calc] Ejemplos de Evaluación:\n");
-    printf("\t$A\n"
-           "\t$2+2\n"
-           "\t$A+2\n"
-           "\t$A*(2+5)+B\n");
+    printf("\t$A;\n"
+           "\t$2+2;\n"
+           "\t$A+2;\n"
+           "\t$A*(2+5)+B;\n");
 }
