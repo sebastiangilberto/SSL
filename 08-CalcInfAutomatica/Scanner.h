@@ -8,7 +8,7 @@
 #include <stdlib.h>
 #include <string.h>
 
-#include "Error.h"
+#include "Logger.h"
 #include "Token.h"
 
 extern char LEXEMA[TAMNOM];

@@ -31,5 +31,6 @@ int Obtener(char nombre[TAMNOM])
             return MEMORIA[i].valor;
         }
     }
-    return 0;
+    Error("[Memoria] Identificador no declarado: %s\n", nombre);
+    exit(EXIT_FAILURE);
 }

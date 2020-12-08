@@ -11,10 +11,10 @@ int main(int argc, char **argv)
 {
        Configuracion(argc, argv);
        Ejemplos();
-       printf("[Calc] Comienzo de objetivo\n");
-       printf("[Calc] Ingrese programa:\n\n");
+       Info("[Calc] Comienzo de objetivo\n");
+       Info("[Calc] Ingrese programa:\n\n");
        Objetivo();
-       printf("[Calc] Fin de objetivo\n");
+       Info("[Calc] Fin de objetivo\n");
 
        return EXIT_SUCCESS;
 }
@@ -31,32 +31,32 @@ static void Configuracion(int argc, char **argv)
 
 static void Ejemplos(void)
 {
-       printf("========================================CALCULADORA INFIJA AUTOMÁTICA========================================\n");
-       printf("[Calc] Modo de uso:\n");
-       printf("Token Inicio '{'\n"
+       Info("========================================CALCULADORA INFIJA AUTOMÁTICA========================================\n");
+       Info("[Calc] Modo de uso:\n");
+       Info("Token Inicio '{'\n"
               "\tLista de sentencias [asignación|evaluación]\n"
               "Token Fin '}'\n");
 
-       printf("\n[Calc] Ejemplo de programa:\n");
-       printf("{\n"
+       Info("\n[Calc] Ejemplo de programa:\n");
+       Info("{\n"
               "\tA=24;\n"
               "\tB=(3+2)*4;\n"
               "\t$A+B;\n"
               "}\n");
 
-       printf("\n[Calc] Ejemplos de asignación:\n");
-       printf("\tA=24;\n"
+       Info("\n[Calc] Ejemplos de asignación:\n");
+       Info("\tA=24;\n"
               "\tA=2+7;\n"
               "\tB=(3+2)*4;\n"
               "\tA=B;\n");
 
-       printf("\n[Calc] Ejemplos de Evaluación:\n");
-       printf("\t$A;\n"
+       Info("\n[Calc] Ejemplos de Evaluación:\n");
+       Info("\t$A;\n"
               "\t$2+2;\n"
               "\t$A+2;\n"
               "\t$A*(2+5)+B;\n");
-       printf("\n[Calc] Los identificadores tienen un máximo de 20 caracteres cada uno\n");
-       printf("[Calc] Cada sentencia se debe ingresar en una línea nueva, terminada con punto y coma ';'\n");
-       printf("[Calc] Para terminar el programa envíe señal de FDT: Ctrl+D (Unix), Ctrl+Z (Windows)\n");
-       printf("========================================COMENZANDO EJECUCIÓN========================================\n");
+       Info("\n[Calc] Los identificadores tienen un máximo de 20 caracteres cada uno\n");
+       Info("[Calc] Cada sentencia se debe ingresar en una línea nueva, terminada con punto y coma ';'\n");
+       Info("[Calc] Para terminar el programa envíe señal de FDT: Ctrl+D (Unix), Ctrl+Z (Windows)\n");
+       Info("========================================COMENZANDO EJECUCIÓN========================================\n");
 }

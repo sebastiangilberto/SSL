@@ -746,126 +746,115 @@ YY_RULE_SETUP
 #line 16 "Scanner.l"
 {
           strcpy(LEXEMA,yytext);
-          printf("[Scanner] Token identificado: %s\n", TokenString(CONSTANTE));
           return (CONSTANTE);
           }
 	YY_BREAK
 case 2:
 YY_RULE_SETUP
-#line 21 "Scanner.l"
+#line 20 "Scanner.l"
 {
 
           strcpy(LEXEMA,yytext);
-          printf("[Scanner] Token identificado: %s\n", TokenString(INICIO));
           return INICIO;
           }
 	YY_BREAK
 case 3:
 YY_RULE_SETUP
-#line 27 "Scanner.l"
+#line 25 "Scanner.l"
 {
 
           strcpy(LEXEMA,yytext);
-          printf("[Scanner] Token identificado: %s\n", TokenString(FIN));
           return FIN;
           }
 	YY_BREAK
 case 4:
 YY_RULE_SETUP
-#line 33 "Scanner.l"
+#line 30 "Scanner.l"
 {
 
           strcpy(LEXEMA,yytext);
-          printf("[Scanner] Token identificado: %s\n", TokenString(PARENTESIS_IZQ));
           return PARENTESIS_IZQ;
           }
 	YY_BREAK
 case 5:
 YY_RULE_SETUP
-#line 39 "Scanner.l"
+#line 35 "Scanner.l"
 {
           strcpy(LEXEMA,yytext);
-          printf("[Scanner] Token identificado: %s\n", TokenString(PARENTESIS_DER));
           return PARENTESIS_DER;
           }
 	YY_BREAK
 case 6:
 YY_RULE_SETUP
-#line 44 "Scanner.l"
+#line 39 "Scanner.l"
 {
           strcpy(LEXEMA,yytext);
-          printf("[Scanner] Token identificado: %s\n", TokenString(MULTIPLICACION));
           return MULTIPLICACION;
           }
 	YY_BREAK
 case 7:
 YY_RULE_SETUP
-#line 49 "Scanner.l"
+#line 43 "Scanner.l"
 {
           strcpy(LEXEMA,yytext);
-          printf("[Scanner] Token identificado: %s\n", TokenString(ADICION));
           return ADICION;
           }
 	YY_BREAK
 case 8:
 YY_RULE_SETUP
-#line 54 "Scanner.l"
+#line 47 "Scanner.l"
 {
           strcpy(LEXEMA,yytext);
-          printf("[Scanner] Token identificado: %s\n", TokenString(EVALUACION));
           return EVALUACION;
           }
 	YY_BREAK
 case 9:
 YY_RULE_SETUP
-#line 59 "Scanner.l"
+#line 51 "Scanner.l"
 {
           strcpy(LEXEMA,yytext);
-          printf("[Scanner] Token identificado: %s\n", TokenString(ASIGNACION));
           return ASIGNACION;
           }
 	YY_BREAK
 case 10:
 YY_RULE_SETUP
-#line 64 "Scanner.l"
+#line 55 "Scanner.l"
 {
           strcpy(LEXEMA,yytext);
-          printf("[Scanner] Token identificado: %s\n", TokenString(PUNTO_Y_COMA));
           return PUNTO_Y_COMA;
           }
 	YY_BREAK
 case 11:
 YY_RULE_SETUP
-#line 69 "Scanner.l"
+#line 59 "Scanner.l"
 {
           strcpy(LEXEMA,yytext);
-          printf("[Scanner] Token identificado: %s\n", TokenString(IDENTIFICADOR));
           return IDENTIFICADOR;
           }
 	YY_BREAK
 case YY_STATE_EOF(INITIAL):
-#line 74 "Scanner.l"
-{ 
-          printf("[Scanner] Token identificado: %s\n", TokenString(FDT));
-          return FDT; 
-          }
+#line 63 "Scanner.l"
+{ return FDT; }
 	YY_BREAK
 case 12:
 YY_RULE_SETUP
-#line 78 "Scanner.l"
+#line 64 "Scanner.l"
 ;
 	YY_BREAK
 case 13:
 YY_RULE_SETUP
-#line 79 "Scanner.l"
-{return ERROR_LEXICO;}
+#line 65 "Scanner.l"
+{ 
+    Error("[Scanner] Error Léxico, carácter inválido: %s\n", yytext);
+    return ERROR_LEXICO; 
+  }
 	YY_BREAK
 case 14:
 YY_RULE_SETUP
-#line 81 "Scanner.l"
+#line 70 "Scanner.l"
 ECHO;
 	YY_BREAK
-#line 869 "Scanner.c"
+#line 858 "Scanner.c"
 
 	case YY_END_OF_BUFFER:
 		{
@@ -1860,11 +1849,12 @@ void yyfree (void * ptr )
 
 #define YYTABLES_NAME "yytables"
 
-#line 81 "Scanner.l"
+#line 70 "Scanner.l"
 
 
 
 /* FUNCIONES PUBLICAS */
+
 
 Token GetNextToken()
 {
@@ -1874,7 +1864,8 @@ Token GetNextToken()
 
     TOKEN_ACTUAL = yylex();
     if (TOKEN_ACTUAL == ERROR_LEXICO)
-      ErrorLexico(TOKEN_ACTUAL);
+      exit(EXIT_FAILURE);
+    Debug("[Scanner] Token identificado: %s\n", TokenString(TOKEN_ACTUAL));
     FLAG_TOKEN = 1;
   }
   return TOKEN_ACTUAL;

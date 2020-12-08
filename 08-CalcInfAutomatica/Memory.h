@@ -6,6 +6,7 @@
 #include <stdio.h>
 #include <stdbool.h>
 
+#include "Logger.h"
 #include "Token.h"
 
 #define TAMMEM 100

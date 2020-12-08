@@ -64,7 +64,7 @@ static void Sentencia(void)
     Match(EVALUACION);
     resultado = Expresion();
     Match(PUNTO_Y_COMA);
-    printf("[Parser] Resultado de evaluación: %d\n", resultado);
+    Info("[Parser] Resultado de evaluación: %d\n", resultado);
     break;
   default:
     return;
@@ -116,8 +116,8 @@ static int Factor(void)
     Match(PARENTESIS_DER);
     break;
   default:
-    ErrorSintactico(3, IDENTIFICADOR, CONSTANTE, PARENTESIS_IZQ);
-    resultado = 0;
+    Error("[Parser] Error Sintáctico, Tokens esperados: [%s, %s, %s], Token actual: %s", TokenString(IDENTIFICADOR), TokenString(CONSTANTE), TokenString(PARENTESIS_IZQ), TokenString(TOKEN_ACTUAL));
+    exit(EXIT_FAILURE);
     break;
   }
 
@@ -127,6 +127,9 @@ static int Factor(void)
 static void Match(Token esperado)
 {
   if (esperado != GetNextToken())
-    ErrorSintactico(1, esperado);
+  {
+    Error("[Parser] Error Sintáctico, Tokens esperados: [%s], Token actual: %s", TokenString(esperado), TokenString(TOKEN_ACTUAL));
+    exit(EXIT_FAILURE);
+  }
   FLAG_TOKEN = 0;
 }

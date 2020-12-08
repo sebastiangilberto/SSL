@@ -7,8 +7,9 @@
 #include <stdio.h>
 #include <string.h>
 
-void Info(const char *prefijo, const char *formato, ...);
-void Debug(const char *prefijo, const char *formato, ...);
+void Info(const char *formato, ...);
+void Error(const char *formato, ...);
+void Debug(const char *formato, ...);
 
 extern int DEBUG;
 
