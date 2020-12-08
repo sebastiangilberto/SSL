@@ -17,7 +17,7 @@ typedef struct
     int valor;
 } RegEx;
 
-extern int ID;
+extern int ID_ACTUAL;
 extern RegEx MEMORIA[TAMMEM];
 
 void Agregar(char identificador[], int valor);

@@ -2,14 +2,14 @@
 
 /* DEFINICION DE VARIABLES */
 
-int ID = 0;
+int ID_ACTUAL = 0;
 RegEx MEMORIA[TAMMEM];
 
 /* FUNCIONES PUBLICAS */
 
 void Agregar(char nombre[TAMNOM], int valor)
 {
-    for (int i = 0; i < ID; i++)
+    for (int i = 0; i < ID_ACTUAL; i++)
     {
         if (strcmp(MEMORIA[i].identificador, nombre) == 0)
         {
@@ -17,14 +17,14 @@ void Agregar(char nombre[TAMNOM], int valor)
             return;
         }
     }
-    strcpy(MEMORIA[ID].identificador, nombre);
-    MEMORIA[ID].valor = valor;
-    ID++;
+    strcpy(MEMORIA[ID_ACTUAL].identificador, nombre);
+    MEMORIA[ID_ACTUAL].valor = valor;
+    ID_ACTUAL++;
 }
 
 int Obtener(char nombre[TAMNOM])
 {
-    for (int i = 0; i < ID; i++)
+    for (int i = 0; i < ID_ACTUAL; i++)
     {
         if (strcmp(MEMORIA[i].identificador, nombre) == 0)
         {
