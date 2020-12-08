@@ -57,7 +57,7 @@ static void Ejemplos(void)
               "\t$A*(2+5)+B;\n");
        Info("\n[Calc] Los identificadores tienen un máximo de 20 caracteres cada uno\n");
        Info("[Calc] Cada sentencia se debe ingresar en una línea nueva, terminada con punto y coma ';'\n");
-       Info("[Calc] Para terminar el programa envíe señal de FDT: Ctrl+D (Unix), Ctrl+Z (Windows)\n");
+       Info("[Calc] Para terminar el programa enviar señal de FDT: Ctrl+D (Unix), Ctrl+Z (Windows)\n");
        Info("[Calc] Para ejecutar el programa en modo debug: ./Calc.out -d\n");
        Info("========================================COMENZANDO EJECUCIÓN========================================\n");
 }
