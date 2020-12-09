@@ -1,17 +1,18 @@
+// PARSER AUTOMATICO
 %{
 #include "Parser.h"
 
-void yyerror(char const *s){
-  printf ("[Parser] Error sintáctico: %s\n", s);
-}
+/* DECLARACION DE FUNCIONES PRIVADAS */
 
-static int yylex();
+static void evaluacion(int valor);
+static int yylex(void);
+static void yyerror(char const *s);
 
 %}
 
 %union {
   int intVal;
-  char strVal[MAXVAL];
+  char strVal[20+1];
 }
 
 %token <strVal> ADICION
@@ -27,8 +28,8 @@ static int yylex();
 %token <strVal> PARENTESIS_DER
 %token <strVal> PARENTESIS_IZQ
 %token <strVal> PUNTO_Y_COMA
-%type <intVal> objetivo
-%type <intVal> programa
+%type <strVal> objetivo
+%type <strVal> programa
 %type <intVal> listaSentencias
 %type <intVal> sentencia
 %type <intVal> expresion
@@ -36,47 +37,56 @@ static int yylex();
 %type <intVal> factor
 
 %%
-programa: INICIO listaSentencias FIN FDT;
+objetivo: programa FDT;
 
-listaSentencias: sentencia 
-  | listaSentencias sentencia;
+programa: INICIO listaSentencias FIN;
 
-sentencia: IDENTIFICADOR ASIGNACION expresion { Agregar($1, $3); }
-  | EVALUACION expresion { printf("[Scanner] Resultado de evaluación: %d\n", $2); };
-
-expresion: termino { $$=$1; }
- | expresion ADICION termino { $$=$1+$3; }
- ;
-
-termino: factor { $$=$1; }
- | factor MULTIPLICACION termino { $$=$1*$3; }
- ;
-
-factor: IDENTIFICADOR { $$=Obtener($1); }
- | CONSTANTE { $$=$1; }
- | PARENTESIS_IZQ expresion PARENTESIS_DER { $$=$2; }
+listaSentencias: sentencia
+               | listaSentencias sentencia
 ;
 
+sentencia: IDENTIFICADOR ASIGNACION expresion PUNTO_Y_COMA { Agregar($1, $3); }
+         | EVALUACION expresion PUNTO_Y_COMA { evaluacion($2); }
+;
 
+expresion: termino { $$ = $1; }
+         | expresion ADICION termino { $$ = $1 + $3; }
+;
+
+termino: factor { $$ = $1; }
+       | factor MULTIPLICACION termino { $$ = $1 * $3; }
+ ;
+
+factor: IDENTIFICADOR { $$ = Obtener($1); }
+      | CONSTANTE { $$ = $1; }
+      | PARENTESIS_IZQ expresion PARENTESIS_DER { $$ = $2; }
+;
 
 %%
 
+/* FUNCIONES PUBLICAS */
 
-static int yylex(void){   
+void yyerror(char const *s){
+  Error("[Parser] Error Sintáctico: %s\n", s);
+}
+
+int yylex(void){   
     return GetNextToken();
 }
 
-void parser(){
+void Objetivo(void){
   switch(yyparse()){
     case 0:
       return;
     case 1:
-     printf("[Scanner] Error Sintáctico \n");
-     return;
+      return;
     default:
-      printf("[Scanner] Error indefinido\n");
+      Error("[Parser] Error indefinido\n");
       return;
   }
 }
 
-
+/* FUNCIONES PRIVADAS */
+static void evaluacion(int valor) {
+    Info("[Parser] Resultado de evaluación: %d\n", valor);
+}
