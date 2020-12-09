@@ -1,4 +1,3 @@
-// PARSER AUTOMATICO
 %{
 #include "Parser.h"
 
@@ -10,31 +9,32 @@ static void yyerror(char const *s);
 
 %}
 
-%union {
-  int intVal;
-  char strVal[20+1];
+%union 
+{
+  int number;
+  char string[100];
 }
 
-%token <strVal> ADICION
-%token <strVal> ASIGNACION
-%token <intVal> CONSTANTE
-%token <strVal> ERROR_LEXICO
-%token <strVal> EVALUACION
-%token <strVal> FDT 0
-%token <strVal> FIN
-%token <strVal> IDENTIFICADOR
-%token <strVal> INICIO
-%token <strVal> MULTIPLICACION
-%token <strVal> PARENTESIS_DER
-%token <strVal> PARENTESIS_IZQ
-%token <strVal> PUNTO_Y_COMA
-%type <strVal> objetivo
-%type <strVal> programa
-%type <intVal> listaSentencias
-%type <intVal> sentencia
-%type <intVal> expresion
-%type <intVal> termino
-%type <intVal> factor
+%token <number> ADICION
+%token <string> ASIGNACION
+%token <number> CONSTANTE
+%token <string> ERROR_LEXICO
+%token <string> EVALUACION
+%token <string> FDT 0
+%token <string> FIN
+%token <string> IDENTIFICADOR
+%token <string> INICIO
+%token <string> MULTIPLICACION
+%token <string> PARENTESIS_DER
+%token <string> PARENTESIS_IZQ
+%token <string> PUNTO_Y_COMA
+%type <string> objetivo
+%type <string> programa
+%type <number> listaSentencias
+%type <number> sentencia
+%type <number> expresion
+%type <number> termino
+%type <number> factor
 
 %%
 objetivo: programa FDT;

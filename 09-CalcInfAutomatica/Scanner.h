@@ -8,7 +8,9 @@
 #include <stdlib.h>
 #include <string.h>
 
+#include "Constants.h"
 #include "Logger.h"
+#include "Token.h"
 
 int GetNextToken();
 

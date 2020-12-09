@@ -10,7 +10,7 @@
 %%
 
 [0-9]+    {
-            yylval.intVal=atoi(yytext);
+            yylval.number=atoi(yytext);
             return CONSTANTE;
           }
 \(        return PARENTESIS_IZQ;
@@ -23,7 +23,7 @@
 \}        return FIN;
 \;        return PUNTO_Y_COMA;
 [a-zA-Z_][a-zA-Z0-9_]*  {
-                          strcpy(yylval.strVal, yytext);
+                          strcpy(yylval.string, yytext);
                           return IDENTIFICADOR;
                         }
 <<EOF>>   return FDT;

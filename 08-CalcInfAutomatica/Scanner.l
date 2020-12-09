@@ -4,8 +4,9 @@
 
 /* DEFINICION DE VARIABLES */
 
-char LEXEMA[TAMNOM];
+Token TOKEN_ACTUAL = INICIAL;
 int FLAG_TOKEN = 0;
+char BUFFER[TAMBUF];
 
 %}
 
@@ -15,47 +16,47 @@ int FLAG_TOKEN = 0;
 %%
 
 [0-9]+                  {
-                          strcpy(LEXEMA,yytext);
+                          strcpy(BUFFER,yytext);
                           return (CONSTANTE);
                         }
 \{                      {
-                          strcpy(LEXEMA,yytext);
+                          strcpy(BUFFER,yytext);
                           return INICIO;
                         }
 \}                      {
-                          strcpy(LEXEMA,yytext);
+                          strcpy(BUFFER,yytext);
                           return FIN;
                         }
 \(                      {
-                          strcpy(LEXEMA,yytext);
+                          strcpy(BUFFER,yytext);
                           return PARENTESIS_IZQ;
                         }
 \)                      {
-                          strcpy(LEXEMA,yytext);
+                          strcpy(BUFFER,yytext);
                           return PARENTESIS_DER;
                         }
 \*                      {
-                          strcpy(LEXEMA,yytext);
+                          strcpy(BUFFER,yytext);
                           return MULTIPLICACION;
                         }
 \+                      {
-                          strcpy(LEXEMA,yytext);
+                          strcpy(BUFFER,yytext);
                           return ADICION;
                         }
 \$                      {
-                          strcpy(LEXEMA,yytext);
+                          strcpy(BUFFER,yytext);
                           return EVALUACION;
                         }
 \=                      {
-                          strcpy(LEXEMA,yytext);
+                          strcpy(BUFFER,yytext);
                           return ASIGNACION;
                         }
 \;                      {
-                          strcpy(LEXEMA,yytext);
+                          strcpy(BUFFER,yytext);
                           return PUNTO_Y_COMA;
                         }
 [a-zA-Z_][a-zA-Z0-9_]*  {
-                          strcpy(LEXEMA,yytext);
+                          strcpy(BUFFER,yytext);
                           return IDENTIFICADOR;
                         }
 <<EOF>>                   return FDT;
@@ -69,7 +70,7 @@ int FLAG_TOKEN = 0;
 
 /* FUNCIONES PUBLICAS */
 
-Token GetNextToken()
+int GetNextToken()
 {
 
   if (!FLAG_TOKEN)

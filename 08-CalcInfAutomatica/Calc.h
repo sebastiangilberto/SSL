@@ -4,6 +4,7 @@
 
 #include <stdlib.h>
 
+#include "Constants.h"
 #include "Logger.h"
 #include "Parser.h"
 

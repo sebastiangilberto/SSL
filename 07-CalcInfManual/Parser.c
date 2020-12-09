@@ -47,18 +47,19 @@ static void ListaSentencias(void)
 
 static void Sentencia(void)
 {
-  char variable[100];
+  char identificador[TAMBUF];
   int resultado = 0;
 
   switch (GetNextToken())
   {
   case IDENTIFICADOR: /* <sentencia> -> IDENTIFICADOR = <expresion> ; */
     Match(IDENTIFICADOR);
-    strcpy(variable, LEXEMA);
+    Debug("[Parser] Sentencia, nombre del identificador guardado en BUFFER: %s\n", BUFFER);
+    strcpy(identificador, BUFFER);
     Match(ASIGNACION);
     resultado = Expresion();
     Match(PUNTO_Y_COMA);
-    Agregar(variable, resultado);
+    Agregar(identificador, resultado);
     break;
   case EVALUACION: /* <sentencia> -> EVALUACION <expresion> ; */
     Match(EVALUACION);
@@ -104,11 +105,12 @@ static int Factor(void)
   {
   case IDENTIFICADOR:
     Match(IDENTIFICADOR);
-    resultado = Obtener(LEXEMA);
+    resultado = Obtener(BUFFER);
     break;
   case CONSTANTE:
     Match(CONSTANTE);
-    resultado = atoi(LEXEMA);
+    resultado = atoi(BUFFER);
+    Debug("[Parser] Factor, valor de constante almacenada en BUFFER: %d\n", resultado);
     break;
   case PARENTESIS_IZQ:
     Match(PARENTESIS_IZQ);

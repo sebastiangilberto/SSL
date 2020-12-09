@@ -740,7 +740,7 @@ case 1:
 YY_RULE_SETUP
 #line 12 "Scanner.l"
 {
-            yylval.intVal=atoi(yytext);
+            yylval.number=atoi(yytext);
             return CONSTANTE;
           }
 	YY_BREAK
@@ -793,7 +793,7 @@ case 11:
 YY_RULE_SETUP
 #line 25 "Scanner.l"
 {
-                          strcpy(yylval.strVal, yytext);
+                          strcpy(yylval.string, yytext);
                           return IDENTIFICADOR;
                         }
 	YY_BREAK

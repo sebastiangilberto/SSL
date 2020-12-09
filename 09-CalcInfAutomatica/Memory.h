@@ -6,15 +6,15 @@
 #include <stdio.h>
 #include <stdbool.h>
 
+#include "Constants.h"
 #include "Logger.h"
 #include "Token.h"
 
 #define TAMMEM 100
-#define TAMNOM (20 + 1)
 
 typedef struct
 {
-    char identificador[TAMNOM];
+    char identificador[TAMBUF];
     int valor;
 } RegEx;
 

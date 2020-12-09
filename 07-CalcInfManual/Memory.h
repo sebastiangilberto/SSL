@@ -6,6 +6,7 @@
 #include <stdio.h>
 #include <stdbool.h>
 
+#include "Constants.h"
 #include "Logger.h"
 #include "Token.h"
 
@@ -13,7 +14,7 @@
 
 typedef struct
 {
-    char identificador[TAMNOM];
+    char identificador[TAMBUF];
     int valor;
 } RegEx;
 

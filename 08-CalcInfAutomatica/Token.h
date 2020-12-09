@@ -2,7 +2,7 @@
 #ifndef TOKEN_H_
 #define TOKEN_H_
 
-#define TAMNOM (20 + 1)
+#define TAMBUF 100
 
 typedef enum
 {
@@ -23,7 +23,5 @@ typedef enum
 } Token;
 
 extern Token TOKEN_ACTUAL;
-
-char *TokenString(Token token);
 
 #endif

@@ -7,9 +7,12 @@
 #include <stdio.h>
 #include <string.h>
 
+#include "Token.h"
+
 void Info(const char *formato, ...);
 void Error(const char *formato, ...);
 void Debug(const char *formato, ...);
+char *TokenString(int token);
 
 extern int DEBUG;
 

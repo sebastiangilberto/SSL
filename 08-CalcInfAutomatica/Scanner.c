@@ -469,11 +469,12 @@ char *yytext;
 
 /* DEFINICION DE VARIABLES */
 
-char LEXEMA[TAMNOM];
+Token TOKEN_ACTUAL = INICIAL;
 int FLAG_TOKEN = 0;
+char BUFFER[TAMBUF];
 
 /* FUNCIONES FLEX */
-#line 477 "Scanner.c"
+#line 478 "Scanner.c"
 
 #define INITIAL 0
 
@@ -655,10 +656,10 @@ YY_DECL
 	register char *yy_cp, *yy_bp;
 	register int yy_act;
     
-#line 15 "Scanner.l"
+#line 16 "Scanner.l"
 
 
-#line 662 "Scanner.c"
+#line 663 "Scanner.c"
 
 	if ( !(yy_init) )
 		{
@@ -743,104 +744,104 @@ do_action:	/* This label is used only to access EOF actions. */
 
 case 1:
 YY_RULE_SETUP
-#line 17 "Scanner.l"
+#line 18 "Scanner.l"
 {
-                          strcpy(LEXEMA,yytext);
+                          strcpy(BUFFER,yytext);
                           return (CONSTANTE);
                         }
 	YY_BREAK
 case 2:
 YY_RULE_SETUP
-#line 21 "Scanner.l"
+#line 22 "Scanner.l"
 {
-                          strcpy(LEXEMA,yytext);
+                          strcpy(BUFFER,yytext);
                           return INICIO;
                         }
 	YY_BREAK
 case 3:
 YY_RULE_SETUP
-#line 25 "Scanner.l"
+#line 26 "Scanner.l"
 {
-                          strcpy(LEXEMA,yytext);
+                          strcpy(BUFFER,yytext);
                           return FIN;
                         }
 	YY_BREAK
 case 4:
 YY_RULE_SETUP
-#line 29 "Scanner.l"
+#line 30 "Scanner.l"
 {
-                          strcpy(LEXEMA,yytext);
+                          strcpy(BUFFER,yytext);
                           return PARENTESIS_IZQ;
                         }
 	YY_BREAK
 case 5:
 YY_RULE_SETUP
-#line 33 "Scanner.l"
+#line 34 "Scanner.l"
 {
-                          strcpy(LEXEMA,yytext);
+                          strcpy(BUFFER,yytext);
                           return PARENTESIS_DER;
                         }
 	YY_BREAK
 case 6:
 YY_RULE_SETUP
-#line 37 "Scanner.l"
+#line 38 "Scanner.l"
 {
-                          strcpy(LEXEMA,yytext);
+                          strcpy(BUFFER,yytext);
                           return MULTIPLICACION;
                         }
 	YY_BREAK
 case 7:
 YY_RULE_SETUP
-#line 41 "Scanner.l"
+#line 42 "Scanner.l"
 {
-                          strcpy(LEXEMA,yytext);
+                          strcpy(BUFFER,yytext);
                           return ADICION;
                         }
 	YY_BREAK
 case 8:
 YY_RULE_SETUP
-#line 45 "Scanner.l"
+#line 46 "Scanner.l"
 {
-                          strcpy(LEXEMA,yytext);
+                          strcpy(BUFFER,yytext);
                           return EVALUACION;
                         }
 	YY_BREAK
 case 9:
 YY_RULE_SETUP
-#line 49 "Scanner.l"
+#line 50 "Scanner.l"
 {
-                          strcpy(LEXEMA,yytext);
+                          strcpy(BUFFER,yytext);
                           return ASIGNACION;
                         }
 	YY_BREAK
 case 10:
 YY_RULE_SETUP
-#line 53 "Scanner.l"
+#line 54 "Scanner.l"
 {
-                          strcpy(LEXEMA,yytext);
+                          strcpy(BUFFER,yytext);
                           return PUNTO_Y_COMA;
                         }
 	YY_BREAK
 case 11:
 YY_RULE_SETUP
-#line 57 "Scanner.l"
+#line 58 "Scanner.l"
 {
-                          strcpy(LEXEMA,yytext);
+                          strcpy(BUFFER,yytext);
                           return IDENTIFICADOR;
                         }
 	YY_BREAK
 case YY_STATE_EOF(INITIAL):
-#line 61 "Scanner.l"
+#line 62 "Scanner.l"
 return FDT;
 	YY_BREAK
 case 12:
 YY_RULE_SETUP
-#line 62 "Scanner.l"
+#line 63 "Scanner.l"
 ;
 	YY_BREAK
 case 13:
 YY_RULE_SETUP
-#line 63 "Scanner.l"
+#line 64 "Scanner.l"
 { 
                           Error("[Scanner] Error Léxico, carácter inválido: %s\n", yytext);
                           return ERROR_LEXICO; 
@@ -848,10 +849,10 @@ YY_RULE_SETUP
 	YY_BREAK
 case 14:
 YY_RULE_SETUP
-#line 68 "Scanner.l"
+#line 69 "Scanner.l"
 ECHO;
 	YY_BREAK
-#line 855 "Scanner.c"
+#line 856 "Scanner.c"
 
 	case YY_END_OF_BUFFER:
 		{
@@ -1846,13 +1847,13 @@ void yyfree (void * ptr )
 
 #define YYTABLES_NAME "yytables"
 
-#line 68 "Scanner.l"
+#line 69 "Scanner.l"
 
 
 
 /* FUNCIONES PUBLICAS */
 
-Token GetNextToken()
+int GetNextToken()
 {
 
   if (!FLAG_TOKEN)

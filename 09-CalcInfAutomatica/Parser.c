@@ -100,7 +100,7 @@
 
 
 /* Copy the first part of user declarations.  */
-#line 2 "Parser.y"
+#line 1 "Parser.y"
 
 #include "Parser.h"
 
@@ -134,8 +134,8 @@ static void yyerror(char const *s);
 typedef union YYSTYPE
 #line 13 "Parser.y"
 {
-  int intVal;
-  char strVal[20+1];
+  int number;
+  char string[100];
 }
 /* Line 193 of yacc.c.  */
 #line 142 "Parser.c"
@@ -1353,47 +1353,47 @@ yyreduce:
     {
         case 6:
 #line 48 "Parser.y"
-    { Agregar((yyvsp[(1) - (4)].strVal), (yyvsp[(3) - (4)].intVal)); ;}
+    { Agregar((yyvsp[(1) - (4)].string), (yyvsp[(3) - (4)].number)); ;}
     break;
 
   case 7:
 #line 49 "Parser.y"
-    { evaluacion((yyvsp[(2) - (3)].intVal)); ;}
+    { evaluacion((yyvsp[(2) - (3)].number)); ;}
     break;
 
   case 8:
 #line 52 "Parser.y"
-    { (yyval.intVal) = (yyvsp[(1) - (1)].intVal); ;}
+    { (yyval.number) = (yyvsp[(1) - (1)].number); ;}
     break;
 
   case 9:
 #line 53 "Parser.y"
-    { (yyval.intVal) = (yyvsp[(1) - (3)].intVal) + (yyvsp[(3) - (3)].intVal); ;}
+    { (yyval.number) = (yyvsp[(1) - (3)].number) + (yyvsp[(3) - (3)].number); ;}
     break;
 
   case 10:
 #line 56 "Parser.y"
-    { (yyval.intVal) = (yyvsp[(1) - (1)].intVal); ;}
+    { (yyval.number) = (yyvsp[(1) - (1)].number); ;}
     break;
 
   case 11:
 #line 57 "Parser.y"
-    { (yyval.intVal) = (yyvsp[(1) - (3)].intVal) * (yyvsp[(3) - (3)].intVal); ;}
+    { (yyval.number) = (yyvsp[(1) - (3)].number) * (yyvsp[(3) - (3)].number); ;}
     break;
 
   case 12:
 #line 60 "Parser.y"
-    { (yyval.intVal) = Obtener((yyvsp[(1) - (1)].strVal)); ;}
+    { (yyval.number) = Obtener((yyvsp[(1) - (1)].string)); ;}
     break;
 
   case 13:
 #line 61 "Parser.y"
-    { (yyval.intVal) = (yyvsp[(1) - (1)].intVal); ;}
+    { (yyval.number) = (yyvsp[(1) - (1)].number); ;}
     break;
 
   case 14:
 #line 62 "Parser.y"
-    { (yyval.intVal) = (yyvsp[(2) - (3)].intVal); ;}
+    { (yyval.number) = (yyvsp[(2) - (3)].number); ;}
     break;
 
 
