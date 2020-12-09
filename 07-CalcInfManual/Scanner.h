@@ -8,10 +8,10 @@
 #include <stdlib.h>
 #include <string.h>
 
+#include "Logger.h"
 #include "Token.h"
-#include "Error.h"
 
-extern char LEXEMA[MAXVAL];
+extern char LEXEMA[TAMNOM];
 extern int FLAG_TOKEN;
 
 Token GetNextToken();

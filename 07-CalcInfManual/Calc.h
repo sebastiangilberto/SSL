@@ -4,8 +4,9 @@
 
 #include <stdlib.h>
 
+#include "Logger.h"
 #include "Parser.h"
 
-int main();
+int main(int argc, char **argv);
 
 #endif

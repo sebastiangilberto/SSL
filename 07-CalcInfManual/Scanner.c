@@ -16,12 +16,11 @@ static bool ParentesisDerecho(int c);
 static bool Asignacion(int c);
 static bool Evaluacion(int c);
 static bool PuntoYComa(int c);
-static void ErrorLexico(int c);
 
 /* DEFINICION DE VARIABLES */
 
 Token TOKEN_ACTUAL;
-char LEXEMA[MAXVAL];
+char LEXEMA[TAMNOM];
 int FLAG_TOKEN = 0;
 
 /* FUNCIONES PUBLICAS */
@@ -30,14 +29,12 @@ Token GetNextToken()
 {
     if (!FLAG_TOKEN)
     {
+
         TOKEN_ACTUAL = Scanner();
         if (TOKEN_ACTUAL == ERROR_LEXICO)
-            ErrorLexico(TOKEN_ACTUAL);
+            exit(EXIT_FAILURE);
+        Debug("[Scanner] Token identificado: %s\n", TokenString(TOKEN_ACTUAL));
         FLAG_TOKEN = 1;
-        if (TOKEN_ACTUAL == IDENTIFICADOR)
-        {
-            // Buscar(buffer, TS, &tokenActual);
-        }
     }
     return TOKEN_ACTUAL;
 }
@@ -97,49 +94,11 @@ Token Scanner()
     }
     else
     {
+        Error("[Scanner] Error Léxico, carácter inválido: %s\n", c);
         token = ERROR_LEXICO;
     }
 
-    printf("[Scanner] Token identificado: %s\n", TokenString(token));
-
     return token;
-}
-
-char *TokenString(Token t)
-{
-    switch (t)
-    {
-    case CONSTANTE:
-        return "CONSTANTE";
-        break;
-    case IDENTIFICADOR:
-        return "IDENTIFICADOR";
-        break;
-    case ADICION:
-        return "ADICION";
-        break;
-    case MULTIPLICACION:
-        return "MULTIPLICACION";
-        break;
-    case PARENTESIS_IZQ:
-        return "PARENTESIS_IZQ";
-        break;
-    case PARENTESIS_DER:
-        return "PARENTESIS_DER";
-        break;
-    case ASIGNACION:
-        return "ASIGNACION";
-        break;
-    case EVALUACION:
-        return "EVALUACION";
-        break;
-    case FDT:
-        return "FDT";
-        break;
-    default:
-        return "UNDEFINED";
-        break;
-    }
 }
 
 /* FUNCIONES PRIVADAS */
@@ -228,11 +187,4 @@ static bool Evaluacion(int c)
 static bool PuntoYComa(int c)
 {
     return c == ';';
-}
-
-static void ErrorLexico(int c)
-{
-    printf("[Scanner] Error Léxico\n");
-    printf("[Scanner] Carácter inválido: %c\n", c);
-    exit(EXIT_SUCCESS);
 }

@@ -6,18 +6,19 @@
 #include <stdio.h>
 #include <stdbool.h>
 
-#define MAXVAL 100
-
+#include "Logger.h"
 #include "Token.h"
+
+#define TAMMEM 100
 
 typedef struct
 {
-    char identificador[MAXVAL];
+    char identificador[TAMNOM];
     int valor;
 } RegEx;
 
-extern RegEx MEMORIA[MAXVAL];
-extern int ID;
+extern int ID_ACTUAL;
+extern RegEx MEMORIA[TAMMEM];
 
 void Agregar(char identificador[], int valor);
 int Obtener(char identificador[]);

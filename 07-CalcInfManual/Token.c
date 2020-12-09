@@ -37,6 +37,12 @@ char *TokenString(Token t)
     case PUNTO_Y_COMA:
         return "PUNTO_Y_COMA";
         break;
+    case INICIO:
+        return "INICIO";
+        break;
+    case FIN:
+        return "FIN";
+        break;
     case FDT:
         return "FDT";
         break;

@@ -2,7 +2,7 @@
 #ifndef TOKEN_H_
 #define TOKEN_H_
 
-#define MAXVAL 100
+#define TAMNOM (20 + 1)
 
 typedef enum
 {

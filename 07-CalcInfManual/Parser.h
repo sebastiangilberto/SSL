@@ -2,10 +2,10 @@
 #ifndef PARSER_H_
 #define PARSER_H_
 
-#include "Error.h"
-#include "Token.h"
+#include "Logger.h"
+#include "Memory.h"
 #include "Scanner.h"
-#include "Memoria.h"
+#include "Token.h"
 
 void Objetivo(void);
 
