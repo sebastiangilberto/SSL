@@ -74,6 +74,7 @@ static void Sentencia(void)
 
 static int Expresion(void)
 {
+  /* <expresion> -> <termino> { ADICION <expresion> } */
   int resultado = Termino();
   switch (GetNextToken())
   {
@@ -87,6 +88,7 @@ static int Expresion(void)
 
 static int Termino(void)
 {
+  /* <termino> -> <factor> { MULTIPLICACION <termino> } */
   int resultado = Factor();
   switch (GetNextToken())
   {
@@ -100,6 +102,11 @@ static int Termino(void)
 
 static int Factor(void)
 {
+  /* <termino> -> IDENTIFICADOR
+                | CONSTANTE
+                | PARENTESIS_IZQ <expresion> PARENTESIS_DER
+  
+  */
   int resultado;
   switch (GetNextToken())
   {
