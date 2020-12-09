@@ -6,11 +6,21 @@ digraph expression_tree {
     Dígito [ label = "+" ];
     Adición [ label = "+" ];
     Multiplicación [label = "+" ];
+    Asignación [label = "+" ];
+    Evaluación [label = "+" ];
+    Inicio [label = "+" ];
+    Fin [label = "+" ];
+    Separador [label = "+" ];
 
     Carácter -> Letra [label="L"];
     Carácter -> Dígito [label="D"];
     Carácter -> Adición [label="+"];
     Carácter -> Multiplicación [label="*"];
+    Carácter -> Asignación [label="="];
+    Carácter -> Evaluación [label="$"];
+    Carácter -> Inicio [label="{"];
+    Carácter -> Fin [label="}"];
+    Carácter -> Separador [label=";"];
     Letra -> Letra [label="L"];
     Dígito -> Dígito [label="D"];
 }
