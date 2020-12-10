@@ -54,7 +54,7 @@ expresion: termino { $$ = $1; }
 ;
 
 termino: factor { $$ = $1; }
-       | factor MULTIPLICACION termino { $$ = $1 * $3; }
+       | termino MULTIPLICACION factor { $$ = $1 * $3; }
  ;
 
 factor: IDENTIFICADOR { $$ = Obtener($1); }
