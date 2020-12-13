@@ -36,7 +36,7 @@ A continuación se listan las expresiones regulares utilizadas por flex, para id
 
 Para esta iteración el `Parser` se desarrollo con la herramienta `bison`.
 
-La interface se mantiene igual entre Calc y Parser, mediante la función `Objetivo()`, que internamente llama a la función de yacc `yyparse()`, la cual lee una secuencia de tokens mediante la función del Scanner `yylex()`.
+La interface se mantiene igual entre Calc y Parser, mediante la función `Objetivo()`, que internamente llama a la función de bison `yyparse()`, la cual lee una secuencia de tokens mediante la función del Scanner `yylex()`.
 
 En el archivo `Parser.y`, se declararon las gramáticas sintácticas.
 
@@ -46,9 +46,9 @@ Debido a que bison realiza una llamada a la función `yylex()` para obtener los 
 
 Para las gramáticas definidas, se puede utilizar recursividad izquierda o derecha.
 
-Con recursividad izquierda, yacc va reduciendo a medida que avanza en en análisis, manteniendo como mucho tres términos en el stack.
+Con recursividad izquierda, bison va reduciendo a medida que avanza en en análisis, manteniendo como mucho tres términos en el stack.
 
-Con recursividad derecha, yacc mantiene todos los términos en el stack, realizando la reducción al encontrar el último término.
+Con recursividad derecha, bison mantiene todos los términos en el stack, realizando la reducción al encontrar el último término.
 
 Para evitar posibles problemas de memoria, y por propias recomendaciones de bibliografías consultadas, se utilizó recursividad izquierda.
 
