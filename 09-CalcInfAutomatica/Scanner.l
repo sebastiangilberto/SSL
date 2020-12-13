@@ -22,7 +22,7 @@
 \{        return INICIO;
 \}        return FIN;
 \;        return PUNTO_Y_COMA;
-[a-zA-Z_][a-zA-Z0-9_]*  {
+[a-zA-Z][a-zA-Z]*       {
                           strcpy(yylval.string, yytext);
                           return IDENTIFICADOR;
                         }

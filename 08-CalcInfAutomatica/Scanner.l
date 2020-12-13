@@ -55,7 +55,7 @@ char BUFFER[TAMBUF];
                           strcpy(BUFFER,yytext);
                           return PUNTO_Y_COMA;
                         }
-[a-zA-Z_][a-zA-Z0-9_]*  {
+[a-zA-Z][a-zA-Z]*       {
                           strcpy(BUFFER,yytext);
                           return IDENTIFICADOR;
                         }

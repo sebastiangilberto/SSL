@@ -11,6 +11,7 @@ digraph expression_tree {
     Inicio [label = "+" ];
     Fin [label = "+" ];
     Separador [label = "+" ];
+    FinDeTexto [label = "FDT" ];
 
     Carácter -> Letra [label="L"];
     Carácter -> Dígito [label="D"];
@@ -21,6 +22,7 @@ digraph expression_tree {
     Carácter -> Inicio [label="{"];
     Carácter -> Fin [label="}"];
     Carácter -> Separador [label=";"];
+    Carácter -> FinDeTexto [label="Fin de entrada"];
     Letra -> Letra [label="L"];
     Dígito -> Dígito [label="D"];
 }
