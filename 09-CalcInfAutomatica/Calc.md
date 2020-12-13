@@ -44,13 +44,37 @@ Debido a que bison realiza una llamada a la función `yylex()` para obtener los 
 
 ### Recursividad
 
-Para las gramáticas definidas, se puede utilizar recursividad izquierda o derecha.
+Para las gramáticas definidas, se puede utilizar 
+recursividad izquierda o derecha.
+
+Para evitar posibles problemas de memoria, y por propias recomendaciones de bibliografías consultadas, se utilizó recursividad izquierda.
+
+#### Recursividad izquierda
 
 Con recursividad izquierda, bison va reduciendo a medida que avanza en en análisis, manteniendo como mucho tres términos en el stack.
 
+Ejemplo:
+
+```
+lista:
+      item
+      | lista ',' item
+      ;
+```
+
+#### Recursividad derecha
+
 Con recursividad derecha, bison mantiene todos los términos en el stack, realizando la reducción al encontrar el último término.
 
-Para evitar posibles problemas de memoria, y por propias recomendaciones de bibliografías consultadas, se utilizó recursividad izquierda.
+Ejemplo:
+
+```
+lista:
+      item
+      | item ',' lista
+```
+
+Para el ejemplo todos los items de la lista serían pusheados al stack, y cuando se detecta el último item, recién en ese momento se realiza la reducción.
 
 ### Tokens
 
