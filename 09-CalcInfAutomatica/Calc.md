@@ -42,7 +42,7 @@ En el archivo `Parser.y`, se declararon las gramáticas sintácticas.
 
 Debido a que bison realiza una llamada a la función `yylex()` para obtener los tokens, se implementó dicha función, cuyo objetivo es llamar a `GetNextToken()` del `Scanner`.
 
-### Recursividad
+### Recursividad
 
 Para las gramáticas definidas, se puede utilizar recursividad izquierda o derecha.
 
@@ -52,7 +52,7 @@ Con recursividad derecha, bison mantiene todos los términos en el stack, realiz
 
 Para evitar posibles problemas de memoria, y por propias recomendaciones de bibliografías consultadas, se utilizó recursividad izquierda.
 
-### Tokens
+### Tokens
 
 Los tokens válidos para el LP se definen en el mismo archivo `Parser.y`, junto con los valores que debe retornar cada uno:
 
