@@ -40,7 +40,7 @@ La interface se mantiene igual entre Calc y Parser, mediante la función `Objeti
 
 En el archivo `Parser.y`, se declararon las gramáticas sintácticas.
 
-Debido a que bison realiza una llamada a la función `yylex()` para obtener los tokens, se implementó dicha función, cuyo objetivo es llamar a `GetNextToken()` del `Scanner`.
+Debido a que bison realiza una llamada a la función `yylex()` para obtener los tokens, se implementó dicha función, la cual internamente llama a `GetNextToken()` del `Scanner`.
 
 ### Recursividad
 
