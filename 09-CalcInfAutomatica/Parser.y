@@ -35,6 +35,7 @@ static void yyerror(char const *s);
 %type <number> expresion
 %type <number> termino
 %type <number> factor
+%start objetivo
 
 %%
 objetivo: programa FDT;

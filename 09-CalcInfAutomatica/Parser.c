@@ -438,8 +438,8 @@ static const yytype_int8 yyrhs[] =
 /* YYRLINE[YYN] -- source line where rule number YYN was defined.  */
 static const yytype_uint8 yyrline[] =
 {
-       0,    40,    40,    42,    44,    45,    48,    49,    52,    53,
-      56,    57,    60,    61,    62
+       0,    41,    41,    43,    45,    46,    49,    50,    53,    54,
+      57,    58,    61,    62,    63
 };
 #endif
 
@@ -1352,47 +1352,47 @@ yyreduce:
   switch (yyn)
     {
         case 6:
-#line 48 "Parser.y"
+#line 49 "Parser.y"
     { Agregar((yyvsp[(1) - (4)].string), (yyvsp[(3) - (4)].number)); ;}
     break;
 
   case 7:
-#line 49 "Parser.y"
+#line 50 "Parser.y"
     { evaluacion((yyvsp[(2) - (3)].number)); ;}
     break;
 
   case 8:
-#line 52 "Parser.y"
+#line 53 "Parser.y"
     { (yyval.number) = (yyvsp[(1) - (1)].number); ;}
     break;
 
   case 9:
-#line 53 "Parser.y"
+#line 54 "Parser.y"
     { (yyval.number) = (yyvsp[(1) - (3)].number) + (yyvsp[(3) - (3)].number); ;}
     break;
 
   case 10:
-#line 56 "Parser.y"
+#line 57 "Parser.y"
     { (yyval.number) = (yyvsp[(1) - (1)].number); ;}
     break;
 
   case 11:
-#line 57 "Parser.y"
+#line 58 "Parser.y"
     { (yyval.number) = (yyvsp[(1) - (3)].number) * (yyvsp[(3) - (3)].number); ;}
     break;
 
   case 12:
-#line 60 "Parser.y"
+#line 61 "Parser.y"
     { (yyval.number) = Obtener((yyvsp[(1) - (1)].string)); ;}
     break;
 
   case 13:
-#line 61 "Parser.y"
+#line 62 "Parser.y"
     { (yyval.number) = (yyvsp[(1) - (1)].number); ;}
     break;
 
   case 14:
-#line 62 "Parser.y"
+#line 63 "Parser.y"
     { (yyval.number) = (yyvsp[(2) - (3)].number); ;}
     break;
 
@@ -1612,7 +1612,7 @@ yyreturn:
 }
 
 
-#line 65 "Parser.y"
+#line 66 "Parser.y"
 
 
 /* FUNCIONES PUBLICAS */
