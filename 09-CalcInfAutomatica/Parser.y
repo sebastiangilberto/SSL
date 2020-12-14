@@ -15,7 +15,7 @@ static void yyerror(char const *s);
   char string[100];
 }
 
-%token <number> ADICION
+%token <string> ADICION
 %token <string> ASIGNACION
 %token <number> CONSTANTE
 %token <string> ERROR_LEXICO

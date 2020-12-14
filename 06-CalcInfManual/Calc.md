@@ -44,9 +44,3 @@
 - Espacios en blanco
 - Tabulados
 - Marcas de fin de línea
-
-## Reparación de error léxico
-
-Al detectar que un carácter que no es válido para ningún lexema en el LP, se despliega un mensaje de error, y se repara el error para continuar con el proceso.
-
-La reparación consiste en ignorar este carácter espúreo, y reiniciar el Análisis Léxico a partir del carácter siguiente.
