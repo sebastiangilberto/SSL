@@ -57,6 +57,10 @@ Cada `PAS` reduce la expresión a un valor entero, lo cual se utiliza para reali
 
 Para la implementación del nivel sintáctico, se desarrollo un `Parser`, con las siguientes funciones:
 
+- Objetivo(): da comienzo al programa y valida que se ingrese el token FDT
+- Programa(): valida que se ingrese el token INICIO, llama a la ListaSentencias y valida que se ingrese el token FIN
+- ListaSentencias(): invoca a la función Sentencia(), y opcionalmente otras sentencias
+- Sentencia(): invoca a las funciones Match() y Expresión() en base a las producciones. Agrega el valor asociado al identificador en la tabla de símbolos.
 - Expresión(): devuelve el resultado devuelto por el término, sumado al valor recursivo de llamar al PAS expresión
 - Término(): devuelve el resultado devuelto por el factor, multiplicado por el valor recursivo de llamar al PAS término
 - Factor(): devuelve el valor numérico de la constante, o el valor asociado al identificador, o el resultado de una expresión entre paréntesis
