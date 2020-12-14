@@ -13,7 +13,7 @@ Para la implementación del nivel léxico, se desarrollo un `Scanner`, que toma 
 ### Gramática Léxica
 
 ```xml
-<token> -> uno de <identificador> <constante> <adición> <multiplicación> <evaluacion> <asignacion> <inicio> <fin> <separador>
+<token> -> uno de <identificador> <constante> <adición> <multiplicación> <evaluacion> <asignacion> <inicio> <fin> <separador> <parentesis_izq> <parentesis_der>
 <identificador> -> <letra> { <letra> }
 <constante> -> <dígito> { <dígito> }
 <adición> -> +
