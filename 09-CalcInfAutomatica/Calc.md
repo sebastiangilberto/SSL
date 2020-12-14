@@ -8,7 +8,7 @@ Dada una expresión regular, se identifica un lexema y se asocia un token válid
 
 La interface se mantiene igual respecto a la comunicación entre Parser y Scanner, mediante la función `GetNextToken()` la cuál invoca a la función de flex `yylex()`.
 
-Por cada acción realizada al evaluar la expresión regular y encontrar una coincidencia, se realiza una copia del valor de la variable `yytex` al `BUFFER`, logrando de esta forma mantener el funcionamiento de la tabla de símbolos (memoria) desarrollada en la iteración anterior.
+Por cada acción realizada al evaluar la expresión regular y encontrar una coincidencia, se realiza una copia del valor de la variable `yytext` al `BUFFER`, logrando de esta forma mantener el funcionamiento de la tabla de símbolos (memoria) desarrollada en la iteración anterior.
 
 ## Expresiones regulares
 
@@ -51,7 +51,7 @@ Para evitar posibles problemas de memoria, y por propias recomendaciones de bibl
 
 #### Recursividad izquierda
 
-Con recursividad izquierda, bison va reduciendo a medida que avanza en en análisis, manteniendo como mucho tres términos en el stack.
+Con recursividad izquierda, bison va reduciendo a medida que avanza en el análisis, manteniendo como mucho tres términos en el stack.
 
 Ejemplo:
 
