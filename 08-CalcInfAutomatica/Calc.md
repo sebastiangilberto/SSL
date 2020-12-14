@@ -34,7 +34,8 @@ A continuación se listan las expresiones regulares utilizadas por flex, para id
 
 ## Nivel Sintáctico
 
-Para el nivel sintáctico se generó un autómata que representa la gramática válida
+Para el nivel sintáctico se generó una gramática independiente del contexto (GIC)
+
 ### Gramática Sintáctica
 
 ```xml

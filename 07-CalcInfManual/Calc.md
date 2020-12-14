@@ -57,7 +57,8 @@ Para la implementación del nivel léxico, se desarrollo un `Scanner`, que toma 
 
 ## Nivel Sintáctico
 
-Para el nivel sintáctico se generó un autómata que representa la gramática válida
+Para el nivel sintáctico se generó una gramática independiente del contexto (GIC)
+
 ### Gramática Sintáctica
 
 ```xml
