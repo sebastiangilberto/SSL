@@ -116,6 +116,7 @@ En caso de encontrarse en memoria, se sobreescribe el valor almacenado por el nu
 Cuando se utilice el identificador en una evaluación o asignación, se buscará en la tabla de símbolos y en caso de encontrarse se devolverá el valor entero asociado.
 
 En caso de no encontrarse el identificador en la tabla de símbolos se producirá un error (informado por stdout) y se abortará el programa.
+
 ## Escenarios de error
 
 Ante los siguientes escenarios, se considera que el programa alcanzó un estado de error, y se aborta el mismo.

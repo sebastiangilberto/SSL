@@ -77,7 +77,7 @@ Para el nivel sintáctico se generó una gramática independiente del contexto (
 Para el análisis sintáctico se utilizó `Analisis Sintactico Descendente Recursivo`, implementado a través de invocaciones a rutinas de forma recursiva.
 Cada función invocada se denomina `Procedimiento de Analisis Sintactico (PAS)`
 
-Cada `PAS` reduce la expresión a un valor entero, lo cual se utiliza para realizar la evaluación de la expresión y mostrar el valor obtenido.
+Algunos `PAS` ejecutan rutinas semánticas, para reducir la expresión a un valor entero, lo cual se utiliza para realizar la evaluación de la expresión y mostrar el valor obtenido.
 
 Para la implementación del nivel sintáctico, se desarrollo un `Parser`, con las siguientes funciones:
 
@@ -105,6 +105,7 @@ En caso de encontrarse en memoria, se sobreescribe el valor almacenado por el nu
 Cuando se utilice el identificador en una evaluación o asignación, se buscará en la tabla de símbolos y en caso de encontrarse se devolverá el valor entero asociado.
 
 En caso de no encontrarse el identificador en la tabla de símbolos se producirá un error (informado por stdout) y se abortará el programa.
+
 ## Escenarios de error
 
 Ante los siguientes escenarios, se considera que el programa alcanzó un estado de error, y se aborta el mismo.
